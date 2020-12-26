@@ -10,7 +10,5 @@ export default function dateFilter(value, format = "date") {
     options.minute = "2-digit";
     options.second = "2-digit";
   }
-  console.log(format);
-  console.log(value);
   return new Intl.DateTimeFormat("ru-RU", options).format(new Date(value));
 }
