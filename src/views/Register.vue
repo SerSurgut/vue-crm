@@ -107,7 +107,7 @@ export default {
     agree: { checked: v => v }
   },
   methods: {
-    submitHendler() {
+    async submitHendler() {
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
@@ -117,8 +117,11 @@ export default {
         username: this.username,
         email: this.email
       };
-      console.log(formData);
-      this.$router.push("/");
+      try {
+        await this.$store.dispatch("register", formData);
+        this.$router.push("/");
+        // eslint-disable-next-line no-empty
+      } catch (error) {}
     }
   }
 };

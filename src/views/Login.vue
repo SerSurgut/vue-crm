@@ -81,7 +81,6 @@ export default {
     password: { required, minLength: minLength(6) }
   },
   mounted() {
-    console.log(messages[this.$route.query.message]);
     if (messages[this.$route.query.message]) {
       this.$message(messages[this.$route.query.message]);
     }
@@ -99,7 +98,7 @@ export default {
       try {
         await this.$store.dispatch("login", formDate);
         this.$router.push("/");
-      // eslint-disable-next-line no-empty
+        // eslint-disable-next-line no-empty
       } catch (e) {}
     }
   }

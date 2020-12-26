@@ -18,12 +18,13 @@ Vue.use(Validate);
 Vue.use(messagePlugin);
 
 const firebaseConfig = {
-  apiKey: "AIzaSyATmmGNlWYq198fUrh9GwftfHm4zr6oGGk",
-  authDomain: "vue-cmr-257fc.firebaseapp.com",
-  projectId: "vue-cmr-257fc",
-  storageBucket: "vue-cmr-257fc.appspot.com",
-  messagingSenderId: "206216033003",
-  appId: "1:206216033003:web:8bec42fb4eaca0c34244ae"
+  apiKey: "AIzaSyBEP76gWHiY14fZnGtLa7RnNoatkje8yKM",
+  authDomain: "test-359be.firebaseapp.com",
+  databaseURL: "https://test-359be-default-rtdb.firebaseio.com",
+  projectId: "test-359be",
+  storageBucket: "test-359be.appspot.com",
+  messagingSenderId: "462032010980",
+  appId: "1:462032010980:web:417c2c1977288702b4f6f1"
 };
 firebase.initializeApp(firebaseConfig);
 let app;
