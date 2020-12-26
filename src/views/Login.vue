@@ -69,6 +69,7 @@
 
 <script>
 import { email, required, minLength } from "vuelidate/lib/validators";
+import messages from "../utils/mesages";
 export default {
   name: "login",
   data: () => ({
@@ -79,7 +80,12 @@ export default {
     email: { email, required },
     password: { required, minLength: minLength(6) }
   },
-
+  mounted() {
+    console.log(messages[this.$route.query.message]);
+    if (messages[this.$route.query.message]) {
+      this.$message(messages[this.$route.query.message]);
+    }
+  },
   methods: {
     submitHendler() {
       if (this.$v.$invalid) {
