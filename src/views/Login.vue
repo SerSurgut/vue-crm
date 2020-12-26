@@ -87,7 +87,7 @@ export default {
     }
   },
   methods: {
-    submitHendler() {
+    async submitHendler() {
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
@@ -96,8 +96,11 @@ export default {
         email: this.email,
         password: this.password
       };
-      console.log(formDate);
-      this.$router.push("/");
+      try {
+        await this.$store.dispatch("login", formDate);
+        this.$router.push("/");
+      // eslint-disable-next-line no-empty
+      } catch (e) {}
     }
   }
 };
